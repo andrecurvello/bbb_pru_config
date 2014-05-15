@@ -27,7 +27,7 @@ cd $DIR"/am335x_pru_package/pru_sw/app_loader/interface"
 cd "../../utils/pasm_source/"
 . ./linuxbuild
 cd ..
-mv pasm pasm_2
+#mv pasm pasm_2 # necessary in old version
 
 # Edit the device tree to enable the PRU
 
@@ -59,4 +59,4 @@ awk '
 dtc -I dts -O dtb am335x-boneblack.dts > am335x-boneblack.dtb
 
 echo "am335x_pru_package install successful."
-echo "You must reboot for the changes to take effect!"
+echo "You must reboot for the changes take effect!"
