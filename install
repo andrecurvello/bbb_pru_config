@@ -18,7 +18,7 @@ fi
 # Clone and configure the am335x_pru_package
 
 cd $DIR
-git clone git://github.com/beagleboard/am335x_pru_package.git
+git clone https://github.com/igorTavares/am335x_pru_package.git
 export CROSS_COMPILE=
 cd $DIR"/am335x_pru_package/pru_sw/app_loader/interface"
 make
