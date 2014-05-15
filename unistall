@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 DIR="/opt/am335x_pru_package"
 
@@ -12,4 +12,4 @@ if [ -d $DIR ]; then
     echo "am335x_pru_package directory removed"
 fi
 
-echo "am335x_pru_package uninstall successful."
+echo "am335x_pru_package uninstalled."

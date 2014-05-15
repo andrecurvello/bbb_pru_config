@@ -1,6 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
-DIR="/opt"
+DIR0="/opt"
+DIR1="am335x_pru_package"
 
 # Verify requisites
 
@@ -17,13 +18,19 @@ fi
 
 # Clone and configure the am335x_pru_package
 
-cd $DIR
+cd $DIR0
+
+if [ -d $DIR1 ]; then
+    rm -r $DIR1
+    echo "Old am335x_pru_package directory removed"
+fi
+
 git clone git://github.com/beagleboard/am335x_pru_package.git
 export CROSS_COMPILE=
-cd $DIR"/am335x_pru_package/pru_sw/app_loader/interface"
+cd $DIR0"/am335x_pru_package/pru_sw/app_loader/interface"
 make
 cd "../../utils/pasm_source/"
-cd $DIR"/am335x_pru_package/pru_sw/app_loader/interface"
+cd $DIR0"/am335x_pru_package/pru_sw/app_loader/interface"
 cd "../../utils/pasm_source/"
 . ./linuxbuild
 cd ..
@@ -58,5 +65,5 @@ awk '
 
 dtc -I dts -O dtb am335x-boneblack.dts > am335x-boneblack.dtb
 
-echo "am335x_pru_package install successful."
+echo "am335x_pru_package installed."
 echo "You must reboot for the changes take effect!"
