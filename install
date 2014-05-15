@@ -54,7 +54,7 @@ awk '
         }
         END {
         }
-' test.txt > tmp && mv tmp test.txt # am335x-boneblack.dts
+' am335x-boneblack.dts > tmp && mv tmp am335x-boneblack.dts
 
 dtc -I dts -O dtb am335x-boneblack.dts > am335x-boneblack.dtb
 
